@@ -2,10 +2,14 @@
 
 <div class="col-xs-6">
 
-  <h3>{{name}}</h3>
-  <div class="form-group">
-    <label for="inputEmail">Email address</label>
-    {{input class="form-control" id="inputEmail"
-      placeholder="Enter your Email address"}}
-  </div>
+  <h3>{{model.name}}</h3>
+
+  {{#purple-inline value=model.email}}
+    {{input
+      class="form-control"
+      id="inputEmail"
+      placeholder="Enter your Email address"
+      value=model.email
+    }}
+  {{/purple-inline}}
 </div>

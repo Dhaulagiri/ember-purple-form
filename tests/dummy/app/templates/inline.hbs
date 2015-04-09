@@ -1,0 +1,19 @@
+<h1>Inline Form</h1>
+
+<div class="col-xs-6">
+
+  <h3>{{model.name}}</h3>
+  <img src={{model.profileImage}}>
+  {{#purple-inline
+    value=model.email
+    cancel="cancel"
+    save="save"
+  }}
+    {{input
+      class="form-control"
+      id="inputEmail"
+      placeholder="Enter your Email address"
+      value=model.email
+    }}
+  {{/purple-inline}}
+</div>

@@ -1,0 +1,19 @@
+{{#if isEditing}}
+  <div class="row">
+    <form {{action "toggleEditing" on="submit"}}>
+      <div class="col-xs-6">
+        {{yield}}
+      </div>
+      <button {{action 'save'}} type="submit" class="btn btn-primary">
+        Update
+      </button>
+      <button {{action 'cancel'}} type="cancel" class="btn btn-default">
+        Cancel
+      </button>
+    </form>
+  </div>
+{{else}}
+  <span class="toggle-form" {{action toggleAction}}>
+    {{value}}
+  </span>
+{{/if}}

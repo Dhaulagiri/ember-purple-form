@@ -50,3 +50,25 @@ test('opening and closing a Disclosed form', function(assert) {
   });
 
 });
+
+// Move this to separate file once there is time to refactor test helpers out
+test('opening and closing a Inline form', function(assert) {
+  visit('/inline');
+
+  andThen(function() {
+    assert.equal(currentPath(), 'inline');
+    assert.isVisible(toggleSelector);
+    assert.isAbsent('form');
+
+    click(toggleSelector).then(function() {
+      assert.isAbsent(toggleSelector);
+      assert.isVisible('form');
+
+      click('button[type="cancel"]').then(function() {
+        assert.isVisible(toggleSelector);
+        assert.isAbsent('form');
+      });
+    });
+  });
+
+});

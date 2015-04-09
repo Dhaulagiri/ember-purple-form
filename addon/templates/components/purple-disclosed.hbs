@@ -1,0 +1,15 @@
+{{#if isShowing}}
+  <form>
+    {{yield}}
+    <button {{action toggleAction}} type="submit" class="btn btn-primary col-xs-9">
+      {{submitText}}
+    </button>
+    <button {{action toggleAction}} type="cancel" class="btn btn-default pull-right col-xs-2">
+      {{cancelText}}
+    </button>
+  </form>
+{{else}}
+  <button {{action toggleAction}} class="btn btn-default">
+    {{toggleText}}
+  </button>
+{{/if}}

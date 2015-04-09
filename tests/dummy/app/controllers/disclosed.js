@@ -11,11 +11,11 @@ export default Ember.Controller.extend({
         key.destroyRecord();
       });
     },
-    save: function(key) {
+    save: function() {
       var key = this.get('key');
       var name = this.get('name');
 
-      this.store.createRecord('ssh-key', {
+      return this.store.createRecord('ssh-key', {
         name: name,
         key: key
       });

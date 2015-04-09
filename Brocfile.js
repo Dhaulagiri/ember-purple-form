@@ -20,5 +20,6 @@ var app = new EmberAddon();
 
 app.import('vendor/purple/purple.css');
 app.import('vendor/purple/purple.js');
+app.import('vendor/md5.js');
 
 module.exports = app.toTree();

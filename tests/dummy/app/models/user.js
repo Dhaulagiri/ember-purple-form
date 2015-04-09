@@ -1,9 +1,14 @@
-import Em from 'ember';
+import Ember from 'ember';
 import DS from 'ember-data';
+import Gravatar from '../utils/gravatar';
 
 var User = DS.Model.extend({
   name: DS.attr('string'),
-  email: DS.attr('string')
+  email: DS.attr('string'),
+  profileImage: Ember.computed('email', function() {
+    var url = Gravatar(this.get('email'));
+    return url;
+  })
 });
 
 User.reopenClass({

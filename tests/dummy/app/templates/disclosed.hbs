@@ -1,18 +1,39 @@
 <h1>Disclosed Form</h1>
 
 <div class="col-xs-6">
+  {{#if model.length}}
+    <ul class="list-group">
+    {{#each model as |key|}}
+      <li class="list-group-item">
+      {{key.name}}
+        <span class="pull-right">
+          <button {{action 'deleteKey' key}} class="pull-right">
+            X
+          </button>
+        </span>
+        <div class="text-muted">
+          {{key.key}}
+        </div>
+      </li>
+    {{/each}}
+    </ul>
+  {{else}}
+      <p>Your SSH Keys will appear here</p>
+  {{/if}}
+
   {{#purple-disclosed
     toggleText="Add SSH Key"
     submitText="Save SSH Key"
-    cancelText="Cancel"}}
+    cancelText="Cancel"
+    model=form}}
 
     <div class="form-group">
       {{textarea class="form-control" cols="75" rows="6"
-        placeholder="Paste your SSH key here"}}
+        placeholder="Paste your SSH key here" value=form.key}}
     </div>
     <div class="form-group">
-      {{input class="form-control" placeholder="Label this key"}}
+      {{input class="form-control" placeholder="Label this key" value=form.name}}
     </div>
-    
+
   {{/purple-disclosed}}
 </div>

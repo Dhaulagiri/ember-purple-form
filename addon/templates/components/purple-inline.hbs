@@ -1,7 +1,7 @@
 {{#if isEditing}}
   <div class="row">
     <form {{action "toggleEditing" on="submit"}}>
-      <div class="col-xs-6">
+      <div class="col-xs-5">
         {{yield}}
       </div>
       <button {{action 'save'}} type="submit" class="btn btn-primary">

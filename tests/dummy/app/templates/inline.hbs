@@ -1,19 +1,25 @@
 <h1>Inline Form</h1>
 
-<div class="col-xs-6">
+<div class="col-xs-8">
 
   <h3>{{model.name}}</h3>
-  <img src={{model.profileImage}}>
-  {{#purple-inline
-    value=model.email
-    cancel="cancel"
-    save="save"
-  }}
-    {{input
-      class="form-control"
-      id="inputEmail"
-      placeholder="Enter your Email address"
+
+  <div class="pull-left u-margin-Rl">
+    <img src={{model.profileImage}} class="img-circle" alt={{model.name}}>
+  </div>
+  <div class="email-input">
+    {{#purple-inline
       value=model.email
+      cancel="cancel"
+      save="save"
     }}
-  {{/purple-inline}}
+      {{input
+        class="form-control"
+        id="inputEmail"
+        placeholder="Enter your Email address"
+        value=model.email
+      }}
+    {{/purple-inline}}
+  </div>
+
 </div>

@@ -10,8 +10,13 @@ export default Ember.Component.extend({
     toggleEditing: function() {
       this.toggleProperty('isEditing');
     },
-    submit: function() {
+    save: function() {
       this.toggleProperty('isEditing');
+      this.sendAction('save');
+    },
+    cancel: function() {
+      this.toggleProperty('isEditing');
+      this.sendAction('cancel');
     }
   }
 });

@@ -4,7 +4,11 @@
 
   <h3>{{model.name}}</h3>
 
-  {{#purple-inline value=model.email}}
+  {{#purple-inline
+    value=model.email
+    cancel="cancel"
+    save="save"
+  }}
     {{input
       class="form-control"
       id="inputEmail"

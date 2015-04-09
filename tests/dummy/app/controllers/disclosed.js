@@ -11,15 +11,32 @@ export default Ember.Controller.extend({
         key.destroyRecord();
       });
     },
-    save: function() {
+    save: function(deferred) {
+      var self = this;
+
+      // Create a new record based on the values in the form
       var key = this.get('key');
       var name = this.get('name');
-
-      return this.store.createRecord('ssh-key', {
+      var sshKey = this.store.createRecord('ssh-key', {
         name: name,
         key: key
       });
-      return false;
+
+      // validate the record
+      sshKey.validate();
+
+      if (sshKey.get('isValid')) {
+        sshKey.save().then(function() {
+          // resolve the deferred promise
+          deferred.resolve();
+          // clear the form
+          self.set('key', '');
+          self.set('name', '');
+        });
+      } else {
+        deferred.reject();
+        sshKey.destroyRecord();
+      }
     }
   }
 });

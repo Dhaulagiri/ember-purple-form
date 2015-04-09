@@ -4,34 +4,30 @@ import layout from '../templates/components/purple-disclosed';
 export default Ember.Component.extend({
   layout: layout,
   isShowing: false,
+  hasErrors: false,
   toggleAction: 'toggleShowing',
 
   actions: {
     toggleShowing: function() {
+      this.set('hasErrors', false);
       this.toggleProperty('isShowing');
-      // if (this.get('isShowing')) {
-      //   this.sendAction('showingForm');
-      // }
     },
     submit: function() {
-      // here we would need to attempt to save the model associated with the form
-      // if there are validation issues, keep the form visible and show error
-      //debugger
-      // var form = this.get('targetObject').get('form');
-      // this.get('targetObject').send('save').then(function(e) {
-      //   debugger
-      // });
-      // otherwise, hide the form
-      
-      var form = this.get('targetObject');
-      var key = form.get('key');
-      var name = form.get('name');
+      var deferred = Ember.RSVP.defer();
+      var self = this;
 
-      form.store.createRecord('ssh-key', {
-        name: name,
-        key: key
+      this.set('hasErrors', false);
+
+      // setup a deferred response that this component can take once
+      // the action is resolved
+      deferred.promise.then(function() {
+        self.toggleProperty('isShowing');
+      },
+      function() {
+        self.set('hasErrors', true);
       });
-      this.toggleProperty('isShowing');
+
+      this.sendAction('save', deferred);
     }
   }
 });

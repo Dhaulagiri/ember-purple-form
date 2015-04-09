@@ -18,7 +18,8 @@ module.exports = function(environment) {
       // when it is created
     },
     contentSecurityPolicy: {
-      'font-src': "'self' http://*.herokucdn.com"
+      'font-src': "'self' http://*.herokucdn.com",
+      'img-src': "'self' http://*.gravatar.com"
     }
   };
 

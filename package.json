@@ -1,7 +1,7 @@
 {
   "name": "ember-purple-form",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Purple. Forms.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,7 +11,10 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dhaulagiri/ember-purple-form"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },

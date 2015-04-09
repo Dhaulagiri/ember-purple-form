@@ -26,9 +26,10 @@ export default Ember.Controller.extend({
       sshKey.validate();
 
       if (sshKey.get('isValid')) {
+        // resolve the deferred promise
+        deferred.resolve();
+
         sshKey.save().then(function() {
-          // resolve the deferred promise
-          deferred.resolve();
           // clear the form
           self.set('key', '');
           self.set('name', '');

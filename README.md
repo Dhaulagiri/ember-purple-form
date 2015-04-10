@@ -2,6 +2,12 @@
 
 This README outlines the details of collaborating on this Ember addon.
 
+## Usage
+
+### Disclosed Form
+
+### Inline Form
+
 ## Installation
 
 * `git clone` this repository

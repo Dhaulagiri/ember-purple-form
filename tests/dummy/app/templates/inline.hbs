@@ -4,45 +4,29 @@
 
   <h3>{{model.name}}</h3>
 
+  <div class="row u-margin-Bl">
+    {{purple-inline
+      value=model.name
+      fieldName="name"
+      cancel="cancel"
+      save="save"
+      placeholder="Enter your Name"
+    }}
+  </div>
+
   <div class="row">
     <div class="col-sm-6">
       <div class="pull-left u-margin-Rl">
         {{em-gravatar email=model.email}}
       </div>
       <div class="email-input">
-        {{#purple-inline
+        {{purple-inline
           value=model.email
+          fieldName="email"
           cancel="cancel"
           save="save"
+          placeholder="Enter your Email"
         }}
-          {{input
-            class="form-control"
-            id="inputEmail1"
-            placeholder="Enter your Email address"
-            value=model.email
-          }}
-        {{/purple-inline}}
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="pull-left u-margin-Rl">
-        {{em-gravatar email=model.email}}
-      </div>
-      <div class="email-input">
-        {{#purple-inline
-          value=model.email
-          valueProp="email"
-          newValueProp="newEmail"
-          cancel="cancel"
-          save="save"
-        }}
-          {{input
-            class="form-control"
-            id="inputEmail2"
-            placeholder="Enter your Email address"
-            value=model.newEmail
-          }}
-        {{/purple-inline}}
       </div>
     </div>
   </div>

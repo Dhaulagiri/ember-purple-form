@@ -1,3 +1,15 @@
 .email-input {
   padding-top: 37px;
 }
+
+.toggle-form {
+  cursor: pointer;
+}
+
+.toggle-form:hover > span.toggle-indicator {
+  display: inline;
+}
+
+.toggle-indicator {
+  display: none;
+}

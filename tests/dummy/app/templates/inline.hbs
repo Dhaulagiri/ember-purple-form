@@ -1,27 +1,49 @@
 <h1>Inline Form</h1>
 
-<div class="col-xs-8">
+<div class="col-xs-12">
 
   <h3>{{model.name}}</h3>
 
-  <div class="pull-left u-margin-Rl">
-    <img src={{model.profileImage}} class="img-circle" alt={{model.name}}>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="pull-left u-margin-Rl">
+        <img src={{model.profileImage}} class="img-circle" alt={{model.name}}>
+      </div>
+      <div class="email-input">
+        {{#purple-inline
+          value=model.email
+          cancel="cancel"
+          save="save"
+        }}
+          {{input
+            class="form-control"
+            id="inputEmail"
+            placeholder="Enter your Email address"
+            value=model.email
+          }}
+        {{/purple-inline}}
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="pull-left u-margin-Rl">
+        <img src={{model.profileImage}} class="img-circle" alt={{model.name}}>
+      </div>
+      <div class="email-input">
+        {{#purple-inline
+          value=model.email
+          valueProp="email"
+          newValueProp="newEmail"
+          cancel="cancel"
+          save="save"
+        }}
+          {{input
+            class="form-control"
+            id="inputEmail"
+            placeholder="Enter your Email address"
+            value=model.newEmail
+          }}
+        {{/purple-inline}}
+      </div>
+    </div>
   </div>
-  <div class="email-input">
-    {{#purple-inline
-      value=model.email
-      valueProp="email"
-      newValueProp="newEmail"
-      cancel="cancel"
-      save="save"
-    }}
-      {{input
-        class="form-control"
-        id="inputEmail"
-        placeholder="Enter your Email address"
-        value=model.newEmail
-      }}
-    {{/purple-inline}}
-  </div>
-
 </div>

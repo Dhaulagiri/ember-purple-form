@@ -12,6 +12,11 @@ User.reopenClass({
       "id": "1",
       "name": "Brian Runnells",
       "email": "brian.runnells@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Brian Runnells Github",
+      "email": "brian.runnells+github@gmail.com"
     }
   ]
 });

@@ -1,0 +1,42 @@
+<h1>Convenience Form</h1>
+
+{{#unless model.length}}
+  <div class="text-center">
+    <h3><small>Collaborators will appear here</small></h3>
+    <p>People you invite as collaborators have code & deploy access to this app</p>
+  </div>
+{{/unless}}
+
+<div class="col-xs-12">
+  <table class="table convenience">
+    {{#each model as |user|}}
+      <tr>
+        <td>
+          <span class="pull-left">
+            {{em-gravatar email=user.email}}
+          </span>
+          {{user.email}}
+        </td>
+        <td class="pull-right">
+          <button {{action 'delete' user}}>
+            X
+          </button>
+        </td>
+      </tr>
+    {{/each}}
+    <tr>
+      <td>
+        {{input
+          class="form-control"
+          value=email
+          placeholder="person@example.com"
+        }}
+      </td>
+      <td class="pull-right">
+        <button {{action 'submit'}} type="submit" class="btn btn-primary">
+          Add Collaborator
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

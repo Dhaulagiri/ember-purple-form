@@ -32,21 +32,13 @@ There are some limitations in the current API:
 The Inline Form allows a user to edit a value inline, revealing form actions (submit/cancel) when a user clicks into the form element.  Here is an example implementation:
 
 ```handlebars
-  {{#purple-inline
-    value=model.email // The value from your to display in the input
-    valueProp="email" // The property on your model associated with the input
-    newValueProp="newEmail" // A placeholder property, whose name is arbitrary, used when editing the value
-    cancel="cancel" // The action on your route/controller to be invoked when the form is cancelled
-    save="save" // The action on your route/controller to be invoked when the form is submitted
-  }}
-    // example bound input control - note that value is set to same property on model as newValueProp above (this will get refactored)
-    {{input
-      class="form-control"
-      id="inputEmail"
-      placeholder="Enter your Email address"
-      value=model.newEmail
+  {{purple-inline
+      value=model.name  // The value from your to display in the input
+      fieldName="name"  // The property on your model associated with the input
+      cancel="cancel" // The action on your route/controller to be invoked when the form is cancelled
+      save="save" // The action on your route/controller to be invoked when the form is submitted
+      placeholder="Enter your Name" // Placeholder text to display in the input
     }}
-  {{/purple-inline}}
 ```
 
 ## Installation

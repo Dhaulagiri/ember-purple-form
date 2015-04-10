@@ -1,3 +1,8 @@
 <h1 class="text-center">
-  ^^^ Pick a form from the navbar! ^^^
+  Select from these components
 </h1>
+
+<div class="row text-center">
+  {{#link-to 'disclosed' tagName="button" classNames="btn btn-primary" href=false}}Disclosed Form{{/link-to}}
+  {{#link-to 'inline' tagName="button" classNames="btn btn-primary" href=false}}Inline Form{{/link-to}}
+</div>

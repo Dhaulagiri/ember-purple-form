@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="pull-left u-margin-Rl">
-        <img src={{model.profileImage}} class="img-circle" alt={{model.name}}>
+        {{em-gravatar email=model.email}}
       </div>
       <div class="email-input">
         {{#purple-inline
@@ -26,7 +26,7 @@
     </div>
     <div class="col-sm-6">
       <div class="pull-left u-margin-Rl">
-        <img src={{model.profileImage}} class="img-circle" alt={{model.name}}>
+        {{em-gravatar email=model.email}}
       </div>
       <div class="email-input">
         {{#purple-inline

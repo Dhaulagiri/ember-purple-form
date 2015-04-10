@@ -13,3 +13,8 @@
 .toggle-indicator {
   display: none;
 }
+
+
+.table.convenience td {
+  padding: 10px;
+}

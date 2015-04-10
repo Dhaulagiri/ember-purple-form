@@ -2,7 +2,11 @@
   <div class="row">
     <form {{action "toggleEditing" on="submit"}}>
       <div class="col-xs-5">
-        {{yield}}
+        {{input
+          value=fieldValue
+          placeholder=placeholder
+          class="form-control"
+        }}
       </div>
       <button {{action 'save'}} type="submit" class="btn btn-primary">
         Update

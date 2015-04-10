@@ -10,6 +10,8 @@
   <div class="email-input">
     {{#purple-inline
       value=model.email
+      valueProp="email"
+      newValueProp="newEmail"
       cancel="cancel"
       save="save"
     }}
@@ -17,7 +19,7 @@
         class="form-control"
         id="inputEmail"
         placeholder="Enter your Email address"
-        value=model.email
+        value=model.newEmail
       }}
     {{/purple-inline}}
   </div>
